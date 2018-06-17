@@ -4,6 +4,11 @@ This is a test of LoadScript.
 
 <span id="result" style="border:thin solid grey">Will it work?</span>
 
+<div class="mui-button">Button</div>
+
+<div style="font-family:'Roboto Mono';font-weight:100">This is Roboto 100</div>
+<div style="font-family:'Roboto Mono';font-weight:500">This is Roboto 500</div>
+
 <script src="loadscript.js"></script>
 <script>
 LoadScript.loadScript([
@@ -14,6 +19,18 @@ LoadScript.loadScript([
     $("#result").text("It worked!");
 })
 .catch((err)=>console.error);
+
+LoadScript.loadStyle([
+    'https://rawgit.com/r03ert0/muijs/master/mui.css',
+    'http://localhost/muijs/mui.css'
+])
+.then(()=>{
+    console.log("stylish!");
+})
+.catch((err)=>console.error);
+
+LoadScript.loadStyle(['https://fonts.googleapis.com/css?family=Roboto+Mono:100,500']);
+
 </script>
 
 </html>
